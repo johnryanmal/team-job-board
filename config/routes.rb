@@ -7,4 +7,5 @@ Rails.application.routes.draw do
 
   get "companies" => "companies#index"
   patch "companies" => "comapnies#update"
+  get "jobs" => "jobs#index"
 end
