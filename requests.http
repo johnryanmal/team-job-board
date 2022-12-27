@@ -1,22 +1,22 @@
-# # CREATE USER
-# POST http://localhost:3000/users.json
-# Content-Type: application/json
+# CREATE USER
+POST http://localhost:3000/users.json
+Content-Type: application/json
 
-# {
-#   "name": "Maria Smith",
-#   "email": "mariasmith@email.com",
-#   "password": "password",
-#   "password_confirmation": "password"
-# }
+{
+  "name": "Maria Smith",
+  "email": "mariasmith@email.com",
+  "password": "password",
+  "password_confirmation": "password"
+}
 
-# ### CREATE SESSION
-# POST http://localhost:3000/sessions.json
-# Content-Type: application/json
+### CREATE SESSION
+POST http://localhost:3000/sessions.json
+Content-Type: application/json
 
-# {
-#   "email": "mariasmith@email.com",
-#   "password": "password"
-# }
+{
+  "email": "mariasmith@email.com",
+  "password": "password"
+}
 
 ### CREATE TAG
 POST http://localhost:3000/tags.json
