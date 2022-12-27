@@ -1,10 +1,12 @@
 class JobsController < ApplicationController
-  # def show
-  #   job = Job.find_by(params[:id])
-  # end
+  before_action :authenticate_admin, only: [:create]
+  def show
+    @job = Job.find_by(params[:id])
+  end
 
   def index
     @jobs = Job.where(active: true)
+  
     render 'index'
   end
   
@@ -27,3 +29,5 @@ class JobsController < ApplicationController
     redirect_to "/jobs"
   end
 end
+
+

@@ -1,14 +1,12 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
   # root "articles#index"
   
-  # get "jobs/:id" => "jobs#show"
+  resources :jobs
 
-  get "companies" => "companies#index"
-  patch "companies" => "companies#update"
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  get "/companies" => "companies#index"
+  patch "/companies" => "companies#update"
 
   # Defines the root path route ("/")
   # root "articles#index"
@@ -19,7 +17,10 @@ Rails.application.routes.draw do
   post "/sessions" => "sessions#create"
   get "/logout" => "sessions#destroy"
 
+  get "/jobs" => "jobs#show"
   get "/jobs" => "jobs#index"
   get "/jobs/new" => "jobs#new"
   post "/jobs" => "jobs#create"
+
+  post "/tags" => "tags#create"
 end
