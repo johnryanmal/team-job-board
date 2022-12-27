@@ -1,6 +1,10 @@
 <h1>Job Index</h1>
-<% @jobs.each do |job| %>
-  <hr />
-  <p><%= job.title %></p>
-  <p><%= job.description %></p>
+<% if @jobs.empty? %>
+  <p>No active jobs.</p>
+<% else %>
+  <% @jobs.each do |job| %>
+    <hr />
+    <p><%= job.title %></p>
+    <p><%= job.description %></p>
+  <% end %>
 <% end %>
