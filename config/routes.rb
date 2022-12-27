@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get "jobs/:id" => "jobs#show"
 
   get "companies" => "companies#index"
-  patch "companies" => "comapnies#update"
+  patch "companies" => "companies#update"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
