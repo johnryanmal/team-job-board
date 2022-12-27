@@ -4,7 +4,7 @@
 <% else %> 
   <% @jobs.each do |job| %>
     <hr />
-    <p><b>Company: </b> <a href="https://www.riotgames.com/en"> <%= job.company.name %> </a> </p>
+    <p><b>Company: </b>  <%= link_to job.company.name, job.company %> </a> </p>
     <p><img src="<%= job.company.logo %>"width=25%, height= 50%></p>
     <p><b>Job title:</b> <%= job.title %></p>
     <p><b>Job Description:</b> <%= job.description %></p>
