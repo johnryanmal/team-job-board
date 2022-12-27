@@ -1,0 +1,10 @@
+# CREATE USER
+POST http://localhost:3000/users.json
+Content-Type: application/json
+
+{
+  "name": "Maria Smith",
+  "email": "mariasmith@email.com",
+  "password": "password",
+  "password_confirmation": "password"
+}
