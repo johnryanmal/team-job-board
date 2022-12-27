@@ -1,3 +1,5 @@
+<h1>Job Index</h1>
+<a href="/jobs/new">New Job Posting</a>
 <h1>Job Board</h1>
 <% if @jobs.empty? %>
   <p>No active jobs.</p>
@@ -16,3 +18,4 @@
     <p><b>Salary: </b> <%= job.salary_range %>
   <% end %>
 <% end %>
+
