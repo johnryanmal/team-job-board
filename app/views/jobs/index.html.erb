@@ -4,7 +4,10 @@
 <% else %>
   <% @jobs.each do |job| %>
     <hr />
-    <p><%= job.title %></p>
+    <h2><%= job.title %></h2>
+    <% unless job.tags.empty? %>
+      <p>Tagged: <%= job.tags.map(&:name).join(',') %></p>
+    <% end %>
     <p><%= job.description %></p>
   <% end %>
 <% end %>

@@ -20,4 +20,6 @@ Rails.application.routes.draw do
   get "/logout" => "sessions#destroy"
 
   get "/jobs" => "jobs#index"
+
+  post "/tags" => "tags#create"
 end

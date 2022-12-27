@@ -17,3 +17,11 @@
 #   "email": "mariasmith@email.com",
 #   "password": "password"
 # }
+
+### CREATE TAG
+POST http://localhost:3000/tags.json
+Content-Type: application/json
+
+{
+  "name": "misc"
+}
