@@ -2,9 +2,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  
-  get "jobs/:id" => "jobs#show"
-  get "jobs" => "jobs#index"
+  root "jobs#index"
 
   get "/companies" => "companies#index"
   patch "/companies" => "comapnies#update"
@@ -18,5 +16,4 @@ Rails.application.routes.draw do
   post "/sessions" => "sessions#create"
   get "/logout" => "sessions#destroy"
 
-  get "/jobs" => "jobs#index"
 end
