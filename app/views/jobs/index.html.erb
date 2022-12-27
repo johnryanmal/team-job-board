@@ -1,10 +1,13 @@
-<h1>Job Index</h1>
+<h1>Job Board</h1>
 <% if @jobs.empty? %>
   <p>No active jobs.</p>
-<% else %>
+<% else %> 
   <% @jobs.each do |job| %>
     <hr />
-    <p><%= job.title %></p>
-    <p><%= job.description %></p>
+    <p><b>Company: </b> <a href="https://www.riotgames.com/en"> <%= job.company.name %> </a> </p>
+    <p><img src="<%= job.company.logo %>"width=25%, height= 50%></p>
+    <p><b>Job title:</b> <%= job.title %></p>
+    <p><b>Job Description:</b> <%= job.description %></p>
+    <p><b>Salary: </b> <%= job.salary_range %>
   <% end %>
 <% end %>
