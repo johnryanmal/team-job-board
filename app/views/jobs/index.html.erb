@@ -6,7 +6,7 @@
     <hr />
     <h2><%= job.title %></h2>
     <% unless job.tags.empty? %>
-      <p>Tagged: <%= job.tags.map(&:name).join(',') %></p>
+      <p><strong>Tagged:</strong> <%= job.tags.map(&:name).join(', ') %></p>
     <% end %>
     <p><%= job.description %></p>
   <% end %>

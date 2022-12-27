@@ -23,5 +23,6 @@ POST http://localhost:3000/tags.json
 Content-Type: application/json
 
 {
-  "name": "misc"
+  "name": "misc",
+  "job_id": 1
 }
