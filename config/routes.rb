@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   # Defines the root path route ("/")
-  # root "articles#index"
+  root "jobs#index"
   
   resources :jobs
 
@@ -10,8 +10,6 @@ Rails.application.routes.draw do
   patch "/companies" => "comapnies#update"
   patch "/companies" => "companies#update"
 
-  # Defines the root path route ("/")
-  # root "articles#index"
   get "/signup" => "users#new"
   post "/users" => "users#create"
   
