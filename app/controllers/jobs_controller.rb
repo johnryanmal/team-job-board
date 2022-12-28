@@ -4,11 +4,16 @@ class JobsController < ApplicationController
     @job = Job.find_by(params[:id])
   end
 
-  def index
-    @jobs = Job.where(active: true)
-    @admin = current_user&.admin?
+  # def index
+  #   @jobs = Job.where(active: true)
+  #   @admin = current_user&.admin?
   
-    render 'index'
+  #   render 'index'
+  # end
+
+  def index
+    @q = Job.ransack(params[:q])
+    @jobs = @q.result(distinct: true)
   end
   
   def new
