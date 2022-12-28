@@ -3,4 +3,8 @@ class CompaniesController < ApplicationController
     @companies = Company.all
     render "index"
   end
+
+  def show 
+    @company = Company.find(params[:id])
+  end
 end

@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   resources :jobs
 
   get "/companies" => "companies#index"
+  get "/companies/:id" => "companies#show"
+  patch "/companies" => "comapnies#update"
   patch "/companies" => "companies#update"
 
   # Defines the root path route ("/")
@@ -23,4 +25,7 @@ Rails.application.routes.draw do
   post "/jobs" => "jobs#create"
 
   post "/tags" => "tags#create"
+  get "/jobs" => "jobs#index"
+
+  resources :companies
 end
