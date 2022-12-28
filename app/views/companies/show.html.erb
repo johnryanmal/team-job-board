@@ -1,5 +1,6 @@
 <h1> <%= @company.name %> </h1>
 <p> <img src="<%= @company.logo %>" width=50%, height=50%> </p>
 <p> <%= @company.description %>
-<%# <li><%= job.where(company_id: current_company) %> </li> %>
+<%# <li><%= job.where(company_id: current_company) %> </li>
 <hr>
+<%= link_to 'Back', :back %>
