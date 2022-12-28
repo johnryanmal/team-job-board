@@ -29,21 +29,21 @@
         <ul class="navbar-nav">
           <li class="nav-item active">
             <a href= "<%= url_for(controller: 'jobs', action: 'index' ) %>" class="nav-link active"> Home </a>
-          </li> 
-        </ul>
-         <ul class="navbar-nav">
+          </li>
           <li class="nav-item active">
             <a href= "<%= url_for(controller: 'users', action: 'new' ) %>" class="nav-link active"> Signup </a>
-          </li> 
-        </ul>
-         <ul class="navbar-nav">
+          </li>
           <li class="nav-item active">
             <a href= "<%= url_for(controller: 'sessions', action: 'new' ) %>" class="nav-link active"> Login </a>
-          </li> 
-        </ul>
-         <ul class="navbar-nav">
+          </li>
           <li class="nav-item active">
             <a href= "<%= url_for(controller: 'companies', action: 'index' ) %>" class="nav-link active"> Companies </a>
+          </li>
+          <% if current_user %>
+            <li class="nav-item active">
+              <a href= "<%= url_for(controller: 'sessions', action: 'destroy' ) %>" class="nav-link active"> Logout </a>
+            </li>
+          <% end %>
         </ul>
       </div>
       <form class="d-flex">
