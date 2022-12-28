@@ -2,7 +2,11 @@
 <%= form_with model: @job do |form| %>
   <div>
     <%= form.label :company_id %>
-    <%= form.text_field :company_id %>
+    <select name="company_id">
+      <% @companies.each do |company| %>
+        <option value="<%= company.id %>"> <%= company.name %> </option>
+      <% end %>
+    </select>
   <div>
   <div>
     <%= form.label :title %>
