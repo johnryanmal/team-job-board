@@ -12,6 +12,7 @@ class JobsController < ApplicationController
   
   def new
     @job = Job.new
+    @companies = Company.all
     render template: "jobs/new"
   end
 
