@@ -19,7 +19,7 @@ class JobsController < ApplicationController
 
   def create 
     @job = Job.new(
-      company_id: params[:job][:company_id],
+      company_id: params[:company_id],
       title: params[:job][:title],
       description: params[:job][:description],
       url: params[:job][:url],
