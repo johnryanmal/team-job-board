@@ -10,6 +10,14 @@
     <% unless job.tags.empty? %>
       <p><strong>Tagged:</strong> <%= job.tags.map(&:name).join(', ') %></p>
     <% end %>
+    <% if @admin %>
+      <!-- Only visible if you are logged in as admin -->
+      <form action="<%= url_for(controller: 'tags', action: 'create') %>" method="post">
+        <input type="text" name="name">
+        <input type="hidden" name="job_id" value="<%= job.id %>">
+        <input type="submit" value="Add Tag">
+      </form>
+    <% end %>
     <p><%= job.description %></p>
     <p><b>Company: </b>  <%= link_to job.company.name, job.company %> </a> </p>
     <p><img src="<%= job.company.logo %>"width=25%, height= 50%></p>

@@ -6,6 +6,7 @@ class JobsController < ApplicationController
 
   def index
     @jobs = Job.where(active: true)
+    @admin = current_user&.admin?
   
     render 'index'
   end
