@@ -1,40 +1,59 @@
-<h1>Job Index</h1>
-<a href="/jobs/new">New Job Posting</a>
-<%= search_form_for @q, url: :jobs do |form| %>
-  <div class="form-group">
-    <%= form.label :search_by_title %>
-    <%= form.text_field :title_cont %>
-  </div>
-
-  <div class="form-group">
-  <%= form.submit 'Search Job', class: 'btn btn-primary btn-md' %>
-  </div>
-
-<% end %>
 <h1>Job Board</h1>
+
+<p>
+  <%= search_form_for @q, url: :jobs do |form| %>
+    <div class="form-group">
+      <%= form.label :search_by_title %>
+      <%= form.text_field :title_cont %>
+      <%= form.submit 'Search Job', class: 'btn btn-primary btn-md' %>
+    </div>
+  <% end %>
+</p>
+
+<% if @admin %>
+  <p><a href="<%= url_for(controller: 'jobs', action: 'new')%>">New Job Posting</a></p>
+<% end %>
+
 <% if @jobs.empty? %>
   <p>No active jobs.</p>
 <% else %> 
   <% @jobs.each do |job| %>
-    <hr />
-    <h2><%= job.title %></h2>
-    <% unless job.tags.empty? %>
-      <p><strong>Tagged:</strong> <%= job.tags.map(&:name).join(', ') %></p>
-    <% end %>
-    <% if @admin %>
-      <!-- Only visible if you are logged in as admin -->
-      <form action="<%= url_for(controller: 'tags', action: 'create') %>" method="post">
-        <input type="text" name="name">
-        <input type="hidden" name="job_id" value="<%= job.id %>">
-        <input type="submit" value="Add Tag" onclick="location.reload()">
-      </form>
-    <% end %>
-    <p><%= job.description %></p>
-    <p><b>Company: </b>  <%= link_to job.company.name, job.company %> </a> </p>
-    <p><img src="<%= job.company.logo %>"width=15%, height= 30%></p>
-    <p><b>Job Description:</b> <%= job.description %></p>
-    <p><b>Salary: </b> <%= job.salary_range %>
+    <div class="card mb-3" style="max-width: 540px;">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <a href="<%= url_for(job.company) %>">
+            <img src="<%= job.company.logo %>" class="img-fluid rounded-start" alt="<%= job.company.name %>">
+          </a>
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title"><%= job.title %></h5>
+            <p class="card-text">
+              <%= job.description %>
+            </p>
+            <p class="card-text">
+              <b>Salary: </b><%= job.salary_range %>
+            </p>
+            <p class="card-text">
+              <small>
+                <% unless job.tags.empty? %>
+                  <b>Tags:</b> <%= job.tags.map(&:name).join(', ') %>
+                <% end %>
+                <% if @admin %>
+                  <!-- Only visible if you are logged in as admin -->
+                  <form action="<%= url_for(controller: 'tags', action: 'create') %>" method="post">
+                    <input type="text" name="name">
+                    <input type="hidden" name="job_id" value="<%= job.id %>">
+                    <input type="submit" value="Add Tag" onclick="location.reload()">
+                  </form>
+                <% end %>
+              </small>
+              <br />
+              <small class="text-muted">Posted at <%= job.created_at%></small>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
   <% end %>
 <% end %>
-
-<%= link_to %>
