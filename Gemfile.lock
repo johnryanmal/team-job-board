@@ -155,6 +155,7 @@ GEM
       activerecord (>= 6.1.5)
       activesupport (>= 6.1.5)
       i18n
+    ratyrate (1.2.2.alpha)
     reline (0.3.2)
       io-console (~> 0.5)
     seed_dump (3.3.1)
@@ -202,6 +203,7 @@ DEPENDENCIES
   puma (~> 5.0)
   rails (~> 7.0.4)
   ransack
+  ratyrate
   seed_dump
   sprockets-rails
   stimulus-rails
