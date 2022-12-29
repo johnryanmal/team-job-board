@@ -7,7 +7,7 @@ class ProfilesController < ApplicationController
   end
 
   def show 
-    @profile = Profile.where(:user_id => current_user.id)
+    @profile = Profile.find_by(:user_id => current_user.id)
       render "profiles/show"
   end
 
