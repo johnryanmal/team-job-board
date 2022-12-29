@@ -1,0 +1,32 @@
+<h1> Profile </h1>
+
+<%= form_with method: "post", url: "/profiles" do |form| %>
+  <div>
+    <%= form.label :name %>
+    <%= form.name_field :name %>
+  </div>
+  <div>
+    <%= form.label :email %>
+    <%= form.email_field :email %>
+  </div>
+   <div>
+    <%= form.label :experience %>
+    <%= form.experience_field :experience %>
+  </div>
+   <div>
+    <%= form.label :education %>
+    <%= form.education_field :education %>
+  </div>
+   <div>
+    <%= form.label :skills %>
+    <%= form.skills_field :skills %>
+  </div>
+   <div>
+    <%= form.label :interest %>
+    <%= form.interest_field :interest %>
+  </div>
+  <div>
+    <%= form.submit "Submit" %>
+  </div>
+<% end%>
+
