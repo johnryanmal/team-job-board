@@ -3,11 +3,11 @@
 <%= form_with method: "post", url: "/profiles" do |form| %>
   <div>
     <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= @current_user.name %>
   </div>
   <div>
     <%= form.label :email %>
-    <%= form.email_field :email %>
+    <%= @current_user.email %>
   </div>
    <div>
     <%= form.label :experience %>

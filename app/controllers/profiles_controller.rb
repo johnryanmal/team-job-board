@@ -7,7 +7,8 @@ class ProfilesController < ApplicationController
   end
 
   def show 
-    @profile = Profile.find(params[:id])
+    @profile = Profile.where(:user_id => current_user.id)
+      render "profiles/show"
   end
 
   def new
@@ -18,10 +19,11 @@ class ProfilesController < ApplicationController
     @profile = Profile.new(
       name: @current_user.name,
       email: @current_user.email,
-      experience: params[:experience],
-      education: params[:education],
-      skills: params[:skills],
-      interest: params[:interest]
+      experience: params[:profile][:experience],
+      education: params[:profile][:education],
+      skills: params[:profile][:skills],
+      interest: params[:profile][:interest],
+      user_id: @current_user.id
     )
     @profile.save
     redirect_to "/jobs"

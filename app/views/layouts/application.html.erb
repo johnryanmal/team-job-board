@@ -52,7 +52,7 @@
       </form> %>
 
       
-      <a href= "#" class="nav-link active"> <%= current_user&.name %> </a>
+      <a href= "<%= url_for(controller: 'profiles', action: 'index' ) %>" class="nav-link active"> <%= current_user&.name %> </a>
 
 
     </nav>
