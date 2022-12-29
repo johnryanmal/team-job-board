@@ -3,7 +3,7 @@
 <p>
   <%= search_form_for @q, url: :jobs do |form| %>
     <div class="form-group">
-      <%= form.label :search_by_title %>
+      <%= form.label :search_by_job_title %>
       <%= form.text_field :title_cont %>
       <%= form.submit 'Search Job', class: 'btn btn-primary btn-md' %>
     </div>
@@ -57,3 +57,5 @@
     </div>
   <% end %>
 <% end %>
+
+
