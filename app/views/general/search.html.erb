@@ -1,1 +1,40 @@
-Search Page
+<h1>Search Results for "<%= @query %>":</h1>
+<p>
+  <small>
+    Found <%= @jobs.count %> jobs, <%= @companies.count %> companies
+  </small>
+</p>
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <button class="nav-link active" id="jobs-tab" data-bs-toggle="tab" data-bs-target="#jobs" type="button" role="tab" aria-controls="jobs" aria-selected="true">Jobs</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="companies-tab" data-bs-toggle="tab" data-bs-target="#companies" type="button" role="tab" aria-controls="companies" aria-selected="false">Companies</button>
+  </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active" id="jobs" role="tabpanel" aria-labelledby="home-tab">
+    <% if @jobs.empty? %>
+      <p>No jobs found.</p>
+    <% else %>
+      <% @jobs.each do |job| %>
+        <h5><%= job.title %></h5>
+        <p>
+          <%= job.description %>
+        </p>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="tab-pane fade" id="companies" role="tabpanel" aria-labelledby="profile-tab">
+    <% if @companies.empty? %>
+      <p>No companies found.</p>
+    <% else %>
+      <% @companies.each do |company| %>
+        <h5><%= company.name %></h5>
+        <p>
+          <%= company.description %>
+        </p>
+      <% end %>
+    <% end %>
+  </div>
+</div>
