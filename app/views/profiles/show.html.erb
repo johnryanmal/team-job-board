@@ -1,7 +1,19 @@
-<h1>My Profile</h1>
-<h2><%= @current_user.name %></h2>
-<p> Experience: <%= @profile.experience %></p>
-<%# <p> Education: <%= @profile.education %></p>
-<%# <p> Skills: <%= @profile.skills %></p> %>
-<%# <p> Interests: <%= @profile.interest %></p> %>
-<%# <a href="/jobs">Back to Job Board</a> %> %>
+<div class="card mb-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title"><%= @current_user.name %></h5>
+        <ul> 
+        <li class="card-text">Experience: <%= @profile.experience %></li>
+        <li class="card-text">Education: <%= @profile.education %></li>
+        <li class="card-text">Skills: <%= @profile.skills %></li>
+        <li class="card-text">Interests: <%= @profile.interest %></li>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
+  </div>
+</div>
+<a href="/jobs">Back to Job Board</a>
