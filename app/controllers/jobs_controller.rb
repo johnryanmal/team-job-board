@@ -1,7 +1,7 @@
 class JobsController < ApplicationController
   # before_action :authenticate_admin, only: [:create]
   def show
-    @job = Job.find_by(params[:id])
+    @job = Job.find(params[:id])
   end
 
   def index

@@ -6,4 +6,6 @@ class User < ApplicationRecord
   def admin?
     admin == true
   end
+  
+  ratyrate_rater
 end
