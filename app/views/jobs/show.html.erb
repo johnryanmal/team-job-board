@@ -1,2 +1,16 @@
 <h1> <%= @job.title %> </h1>
-Salary  : <%= rating_for @job, "salary_range", stars: 5 %>
+<div class="row">
+  <div class="small-2 large-2 columns">
+    <%= imdb_style_rating_for @job, current_user%>
+  </div>
+  <br>
+  <div class="small-2 large-4 columns">
+    <% if current_user %>
+      Salary: <%= rating_for @job, "salary_range", star: 10 %>
+      <br>
+      Culture: <%= rating_for @job, "culture" %>
+      <br>
+      Raise: <%= rating_for @job, "work_environment" %> 
+    <% end %>
+  </div>
+</div>
