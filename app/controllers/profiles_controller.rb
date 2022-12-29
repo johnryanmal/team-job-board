@@ -16,14 +16,14 @@ class ProfilesController < ApplicationController
 
   def create 
     @profile = Profile.new(
-      name: params[:current_user][:name],
-      email: params[:current_user][:email],
+      name: @current_user.name,
+      email: @current_user.email,
       experience: params[:experience],
       education: params[:education],
       skills: params[:skills],
       interest: params[:interest]
     )
-    @job.save
+    @profile.save
     redirect_to "/jobs"
   end
 
