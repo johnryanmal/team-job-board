@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   post "/sessions" => "sessions#create"
   get "/logout" => "sessions#destroy"
 
-  get "/jobs" => "jobs#show"
+  get "/jobs/:id" => "jobs#show"
   get "/jobs" => "jobs#index"
   get "/jobs/new" => "jobs#new"
   post "/jobs" => "jobs#create"
