@@ -5,10 +5,9 @@ class JobsController < ApplicationController
   end
 
   def index
-    @jobs = Job.where(active: true)
+    @q = Job.ransack(params[:q])
+    @jobs = @q.result(distinct: true)
     @admin = current_user&.admin?
-  
-    render 'index'
   end
   
   def new
@@ -19,7 +18,7 @@ class JobsController < ApplicationController
 
   def create 
     @job = Job.new(
-      company_id: params[:job][:company_id],
+      company_id: params[:company_id],
       title: params[:job][:title],
       description: params[:job][:description],
       url: params[:job][:url],
