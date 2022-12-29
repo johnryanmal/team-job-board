@@ -46,14 +46,15 @@
           <% end %>
         </ul>
       </div>
-      <%# <form class="d-flex">
-        <input type="text" class="form-control me-2">
+
+      <form class="d-flex" action="<%= url_for(controller: 'general', action: 'search') %>" method="get">
+        <input type="text" class="form-control me-2" name="query">
         <button type="submit" class="btn btn-primary"> Search</button>
-      </form> %>
+      </form>
 
       <% if current_user %>
         <p class="navbar-nav">
-          <a href= "<%= url_for(controller: 'profiles', action: 'create' ) %>" class="nav-link active"> <%= current_user&.name %> </a>
+          <a href= "<%= url_for(controller: 'profiles', action: 'create' ) %>" class="nav-link active"> <%= current_user.name %> </a>
         </p>
       <% end %>
 
@@ -165,8 +166,8 @@
             <i class="fas fa-envelope me-3 text-secondary"></i>
             jobboard@email.com
           </p>
-          <p><i class="fas fa-phone me-3 text-secondary"></i> + 541-262-6373</p>
-          <p><i class="fas fa-print me-3 text-secondary"></i> + 415-342-6373</p>
+          <p><i class="fas fa-phone me-3 text-secondary"></i> (541)-262-6373</p>
+          <p><i class="fas fa-print me-3 text-secondary"></i> (415)-342-6373</p>
         </div>
         <!-- Grid column -->
       </div>

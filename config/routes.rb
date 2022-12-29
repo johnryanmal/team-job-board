@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
+  post '/rate' => 'rater#create', :as => 'rate'
 
   # Defines the root path route ("/")
   root "jobs#index"
   
+  get "/search" => "general#search"
+
   resources :jobs
 
   get "/companies" => "companies#index"
