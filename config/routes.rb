@@ -25,8 +25,10 @@ Rails.application.routes.draw do
   post "/tags" => "tags#create"
   get "/jobs" => "jobs#index"
 
+  get "/profiles" => "profiles#show"
   get "/profiles" => "profiles#index"
   post "/profiles" => "profiles#create"
+  resources :profiles
 
   resources :companies
 end
