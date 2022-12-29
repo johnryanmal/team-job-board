@@ -47,8 +47,8 @@
         </ul>
       </div>
 
-      <form class="d-flex">
-        <input type="text" class="form-control me-2">
+      <form class="d-flex" action="<%= url_for(controller: 'general', action: 'search') %>" method="get">
+        <input type="text" class="form-control me-2" name="query">
         <button type="submit" class="btn btn-primary"> Search</button>
       </form>
 
