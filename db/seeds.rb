@@ -15,7 +15,10 @@ Job.create!([
   {company_id: 8, title: "Customer Service Rep", description: "Endure the terrors of customer service", url: nil, location: "Multiple", active: true, salary_range: "Minimum wage"},
   {company_id: 9, title: "Fake CEO", description: "be the fall guy for Elon", url: nil, location: "San Francisco", active: true, salary_range: "200-300k"},
   {company_id: 9, title: "Front-End Developemnt", description: "Work long hours and weeks to keep our website profittable", url: nil, location: nil, active: true, salary_range: "120-150k"},
-  {company_id: 10, title: "Unity Developer", description: "Make games", url: nil, location: nil, active: true, salary_range: "150-200k"}
+  {company_id: 10, title: "Unity Developer", description: "Make games", url: nil, location: nil, active: true, salary_range: "150-200k"},
+  {company_id: 11, title: "Asset Manager", description: "Monitor and guide a team in maintaining and increasing current assets", url: nil, location: nil, active: true, salary_range: "200k + compensation, TC = ~500k"},
+  {company_id: 12, title: "Server", description: "Understand the menu and wines to asssit our guest. Show them the utmost respect and professional attitude", url: nil, location: nil, active: true, salary_range: "60k~/yr"},
+  {company_id: 13, title: "Manager", description: "Maintain store and stock, train new hires, upsell membership", url: nil, location: nil, active: true, salary_range: "60-80k"}
 ])
 Company.create!([
   {name: "Riot Games", logo: "https://logos-world.net/wp-content/uploads/2022/05/Riot-Games-New-Logo.png", description: "Indie gaming company looking to expand"},
@@ -27,5 +30,8 @@ Company.create!([
   {name: "Tesla", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Tesla_T_symbol.svg/800px-Tesla_T_symbol.svg.png", description: "Make cars, make money"},
   {name: "Macy", logo: "https://logos-world.net/wp-content/uploads/2021/09/Macys-Emblem.png", description: "We sell an assortment of stuff"},
   {name: "Twitter", logo: "https://www.aps.edu/sapr/images/pnglot.comtwitterbirdlogopng139932.png/image_preview", description: "We are all about freedom of speech and making money"},
-  {name: "Supergiant Games", logo: "https://cdn2.steamgriddb.com/file/sgdb-cdn/icon/851300ee84c2b80ed40f51ed26d866fc/32/256x256.png", description: "We make games."}
+  {name: "Supergiant Games", logo: "https://cdn2.steamgriddb.com/file/sgdb-cdn/icon/851300ee84c2b80ed40f51ed26d866fc/32/256x256.png", description: "We make games."},
+  {name: "Boka", logo: "https://uploads-ssl.webflow.com/5f4d545154c56f0f70b59928/5f570b1b9abf9e5d67e269d8_Boka_Logo-1.png", description: "Fine dinning restaurant located in Chicago with a rotating seasonal menu."},
+  {name: "Rei Co-op", logo: "https://silvertonmountain.com/wp-content/uploads/2018/12/REI-Co-op-Logo-Black-Back.jpg", description: "Outdoor company that has a load of outdoor equipment. We sell and rent all the gear you need for an outdoor adventure. Become a member and have a lifetime savings!"},
+  {name: "Coinbase", logo: "https://cryptogoodies.shop/wp-content/uploads/2022/02/brand-coinbase-logo.png", description: "We are a cryptocurrency exchange, that will assist you in everything."}
 ])
