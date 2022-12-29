@@ -12,7 +12,7 @@
 
   <body>
     <nav class= "navbar navbar-expand-md navbar-light bg-primary">
-      <a href="#" class="navbar-brand mb-0 "> <img src="https://w7.pngwing.com/pngs/610/106/png-transparent-brand-line-line-angle-text-logo-thumbnail.png" width="50" height="50"/>Menu</a>
+      <a href="<%= url_for(controller: 'jobs', action: 'index' ) %>" class="navbar-brand mb-0 "> <img src="https://w7.pngwing.com/pngs/610/106/png-transparent-brand-line-line-angle-text-logo-thumbnail.png" width="50" height="50"/></a>
 
       <button
         type="button"
@@ -50,7 +50,7 @@
       <form class="d-flex" action="<%= url_for(controller: 'general', action: 'search') %>" method="get">
         <input type="text" class="form-control me-2" name="query">
         <button type="submit" class="btn btn-primary"> Search</button>
-      </form>
+      </form> %>
 
       <% if current_user %>
         <p class="navbar-nav">
